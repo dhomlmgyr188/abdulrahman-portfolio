@@ -3,6 +3,8 @@ import { resolve } from "path";
 import handlebars from "vite-plugin-handlebars";
 
 export default defineConfig({
+  base: "/abdulrahman-portfolio/",
+
   plugins: [
     handlebars({
       partialDirectory: resolve("./src/partials"),
