@@ -1,0 +1,31 @@
+@use '../config/variables.scss' as variables;
+@use '../config/colors.scss' as colors;
+@use '../base/fonts.scss' as fonts;
+$height-header: 80px;
+
+html{
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    direction: rtl;
+}
+
+*, 
+*::before, 
+*::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-size: variables.$font-base !important;
+    line-height: variables.$line-height !important;
+    color: colors.$color-content !important;
+    background-color: colors.$color-background !important;
+    font-family: fonts.$family-content !important;
+    font-weight: normal !important;
+    padding-top: $height-header;
+}
+
+section{
+    scroll-margin-top: $height-header;
+    min-height: 70vh;
+} 

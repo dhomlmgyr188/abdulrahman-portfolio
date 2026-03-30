@@ -1,0 +1,26 @@
+@use '../base/fonts.scss' as fonts;
+@use "../utilities/spacing" as spacing;
+
+h1, h2, h3, h4, h5, h6{
+    font-family: fonts.$family-heading;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+h1{
+    font-size: 42px;
+}
+
+h2{
+    font-size: 28px;
+    padding-bottom: spacing.spacing("small");
+}
+
+h3{
+    font-size: 17px;
+}
+
+p, span,small{
+    font-family: fonts.$family-content;
+    font-weight: normal;
+}

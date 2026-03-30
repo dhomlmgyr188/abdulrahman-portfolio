@@ -1,0 +1,21 @@
+// base folder
+@use './base/fonts';
+@use './base/reset';
+@use './base/typography';
+@use './base/links';
+
+// Config folder
+@use './config/colors';
+@use './config/layout';
+@use './config/variables';
+
+// pages folder
+@use './pages/footer';
+@use './pages/navbar';
+@use './pages/index';
+
+// utilities folder
+@use './utilities/spacing';
+
+// Import all of Bootstrap’s CSS
+@import 'bootstrap/scss/bootstrap';
