@@ -23,7 +23,6 @@
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
-    "flag-icons": "^7.5.0",
     "vite-plugin-handlebars": "^2.0.0"
   }
 }
