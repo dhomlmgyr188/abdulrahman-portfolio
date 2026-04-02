@@ -3,6 +3,23 @@
 @use "../config/layout" as layout;
 @use "sass:color";
 
+// rest
+#about-me,
+#skills,
+#certificates {
+  h1 {
+    padding-bottom: spacing.spacing("small");
+  }
+}
+
+//classes
+.custom-border-bottom {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid colors.$color-dark;
+  width: fit-content;
+}
+
 // home
 #home {
   display: flex;
@@ -139,6 +156,14 @@
   justify-content: center;
   background-color: colors.$color-background;
 
+  h3 {
+    color: colors.$color-gray;
+
+    &.custom-border-bottom {
+      border-bottom: 3px solid colors.$color-gray;
+    }
+  }
+
   .custom-skill-card {
     background: colors.$color-white;
     border-radius: 16px;
@@ -147,23 +172,103 @@
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
     transition: 0.3s;
 
-    &:hover{
+    &:hover {
       transform: translateY(-5px);
     }
-    &--title{
-    font-size: 18px;
-    margin: 10px 0;
+
+    &__title {
+      font-size: 18px;
+      margin: 10px 0;
     }
-    &--level{
-    display: inline-block;
-    padding: 4px 10px;
-    background: colors.$color-gray;
-    color: colors.$color-white;
-    border-radius: 8px;
-    font-size: 12px;
+
+    &__level {
+      display: inline-block;
+      padding: 4px 10px;
+      background: colors.$color-gray;
+      color: colors.$color-white;
+      border-radius: 8px;
+      font-size: 12px;
     }
   }
+}
 
+#certificates {
+  background-color: colors.$color-background-n;
+
+  .custom-certificates-card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: right;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid transparent;
+    background-color: colors.$color-white;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    &:hover {
+      transform: translateY(-5px);
+    }
+    &__img {
+      object-fit: contain;
+      &--vertical {
+        width: auto;
+        height: 100%;
+      }
+      &--horizontal {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__contents {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0px 0px 0px;
+
+      &__type {
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 3px 5px;
+        color: colors.$color-white;
+
+        &--one {
+          background-color: colors.$color-blue-dark;
+        }
+
+        &--two {
+          background-color: colors.$color-yellow-dark;
+        }
+
+        &--three {
+          background-color: colors.$color-red-dark;
+        }
+      }
+
+      &__date {
+        font-size: 14px;
+        border-radius: 5px;
+        padding: 3px 5px;
+        color: colors.$color-gray;
+        background-color: colors.$color-background-n;
+      }
+
+      &__title {
+        font-size: 18px;
+        margin-bottom: 0;
+      }
+
+      &__issuing-organization {
+        margin-bottom: 0;
+        font-size: 16px;
+        color: colors.$color-gray;
+      }
+    }
+  }
 }
 
 @media (max-width: layout.$medium-devices) {
