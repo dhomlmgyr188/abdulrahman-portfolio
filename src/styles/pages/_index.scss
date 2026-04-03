@@ -6,9 +6,10 @@
 // rest
 #about-me,
 #skills,
-#certificates {
+#certificates,
+#projects-gallery {
   h1 {
-    padding-bottom: spacing.spacing("small");
+    padding-bottom: spacing.spacing("normal");
   }
 }
 
@@ -203,8 +204,7 @@
     display: flex;
     flex-direction: column;
     text-align: right;
-    padding: 25px;
-    border-radius: 10px;
+    height: 350px;
     border: 2px solid transparent;
     background-color: colors.$color-white;
     transition: all 0.3s ease;
@@ -223,7 +223,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
       }
 
       .overly {
@@ -233,7 +233,6 @@
         position: absolute;
         inset: 0;
         opacity: 0;
-        border-radius: 10px;
         transition: all .3s ease;
         background: rgba(0, 0, 0, 0.50);
       }
@@ -259,7 +258,7 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 10px;
-      padding: 25px 0px 0px;
+      padding: 25px;
 
       &__type {
         font-size: 14px;
@@ -302,11 +301,185 @@
   }
 }
 
+
+#projects-gallery {
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .project {
+      border-bottom: 3px solid colors.$color-background-n;
+      padding-bottom: 25px;
+
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      &--one {
+        flex-direction: row;
+      }
+
+      &--two {
+        flex-direction: row-reverse;
+      }
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 75px;
+
+      &__contents {
+        flex: 5;
+        display: flex;
+        text-align: right;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+
+        &__title {
+          color: colors.$color-dark;
+          margin-bottom: 8px;
+        }
+
+        &__desc {
+          color: colors.$color-gray;
+          margin-bottom: 16px;
+        }
+
+        &__technologies {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5px;
+
+          &__technique {
+            border-radius: 5px;
+            text-align: center;
+            color: colors.$color-white;
+            background-color: colors.$color-gray;
+            font-weight: 600;
+            padding: 3px 9px;
+
+          }
+        }
+
+        &__links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin: 16px 0px;
+
+          &__link {
+            font-weight: 600;
+            border-radius: 10px;
+            padding: 5px 10px;
+            background-color: colors.$color-dark;
+            border: 1px solid transparent;
+            color: colors.$color-white;
+
+            &--button {
+              &:hover {
+                background-color: adjust-color(colors.$color-dark, $lightness: 20%);
+              }
+            }
+
+            &--ghost {
+              font-weight: 400;
+              background-color: transparent;
+              border: 1px solid black;
+              color: black;
+
+              &:hover {
+                background-color: rgba(colors.$color-dark, 0.10);
+              }
+            }
+          }
+        }
+      }
+
+      &__gallery {
+        flex: 5;
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+
+        &__carousel {
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .carousel-inner {
+            height: 100%;
+            border-radius: 10px;
+
+            .carousel-item {
+              height: 100%;
+            }
+          }
+
+          &__control {
+            color: unset !important;
+            background-color: unset !important;
+            filter: unset !important;
+            opacity: 1 !important;
+
+            i {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 25px;
+              height: 25px;
+              border-radius: 5px;
+              color: colors.$color-white;
+              font-size: 18px;
+              font-weight: bold;
+              background-color: rgba(colors.$color-dark, 0.50);
+              transition: all .2s ease;
+
+              &:active,
+              &:focus,
+              &:hover {
+                background-color: rgba(colors.$color-dark, 1);
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
 @media (max-width: layout.$medium-devices) {
   #home {
     .wrapper {
       height: 200px;
       width: 200px;
+    }
+  }
+}
+
+@media (max-width: layout.$small-devices) {
+  #projects-gallery {
+    .projects {
+      .project {
+        gap: 0;
+        flex-direction: column;
+
+        &__gallery {
+          &__carousel {
+            img {
+              height: 200px;
+            }
+          }
+        }
+      }
     }
   }
 }
