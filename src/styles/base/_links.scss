@@ -1,15 +1,19 @@
 @use '../config/colors' as colors;
 @use 'sass:color';
 
-a, a:hover, a:focus, a:active{
+a,
+a:hover,
+a:focus,
+a:active {
     text-decoration: none !important;
 }
-a{
+
+a {
     color: colors.$color-link;
     cursor: pointer;
     transition: .2s ease;
 
-    &:hover{
-        color: color.adjust(colors.$color-link, $lightness: 10%)
+    &:hover {
+        color: color.adjust(colors.$color-link, $lightness: 10%);
     }
 }
