@@ -5,3 +5,7 @@ import * as bootstrap from 'bootstrap'
 
 // Import Fontawesome
 import "@fortawesome/fontawesome-free/css/all.css";
+
+// enable tooltip
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
