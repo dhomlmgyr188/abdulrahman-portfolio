@@ -4,15 +4,6 @@
 @use "sass:color";
 
 // rest
-::-webkit-scrollbar{
-  width: 15px;
-}
-
-::-webkit-scrollbar-thumb{
-  background-color: colors.$color-brand;
-  border: 3px solid colors.$color-white;
-  border-radius: 10px;
-}
 
 #about-me,
 #skills,
@@ -278,7 +269,7 @@
         color: colors.$color-white;
 
         &--one {
-          background-color: colors.$color-blue-dark;
+          background-color: colors.$color-brand;
         }
 
         &--two {
@@ -370,7 +361,7 @@
             border-radius: 5px;
             text-align: center;
             color: colors.$color-white;
-            background-color: colors.$color-gray;
+            background-color: colors.$color-brand;
             font-weight: 600;
             padding: 3px 9px;
 
@@ -468,56 +459,83 @@
   }
 }
 
+
 #education {
   background-color: colors.$color-background-n;
 
-  .education-certificates {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    &__high-school,
-    &__intermediate-diploma {
+  .timeline {
+    position: relative;
+    text-align: right;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 5px;
+      border-radius: 10px;
+      height: 100%;
+      background-color: colors.$color-white;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .intermidate-diploma {
+      position: relative;
+      border-radius: 10px;
+      background-color: colors.$color-white;
+      width: calc(50% - 40px);
+      margin-left: auto;
+      padding: 20px;
+
+      &__circle {
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: colors.$color-primary;
+        border: 5px solid colors.$color-background-n;
+        bottom: 50%;
+        left: -55px;
+      }
+
       &__content {
-        &__table {
-          color: colors.$color-dark;
-          border-collapse: collapse;
-          margin: auto;
+        &__title {
+          color: colors.$color-primary;
+        }
 
-          &--phone {
-            display: none;
-            text-align: right;
-          }
-
-          caption {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-            caption-side: top;
-          }
-
-          th,
-          td {
-            border: 3px double colors.$color-dark;
-            padding: spacing.spacing("extra-small");
-          }
-
-          th {
-            color: colors.$color-white;
-            background-color: colors.$color-brand;
-          }
-
+        &__sub-title {
+          margin-bottom: 0;
         }
       }
     }
 
-    &__high-school {
+    .high-school {
+      position: relative;
+      border-radius: 10px;
+      background-color: colors.$color-white;
+      width: calc(50% - 40px);
+      margin-right: auto;
+      padding: 20px;
+      color: colors.$color-subdued;
+
+      &__circle {
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: colors.$color-subdued;
+        border: 5px solid colors.$color-background-n;
+        bottom: 50%;
+        right: -55px;
+      }
+
       &__content {
-        &__table {
-          th {
-            background-color: rgba(0, 0, 0, 0.08);
-            color: colors.$color-dark;
-          }
+
+        &__sub-title {
+          margin-bottom: 0;
+        }
+        a{
+          color: colors.$color-subdued;
         }
       }
     }
@@ -525,27 +543,6 @@
 }
 
 @media (max-width: layout.$medium-devices) {
-  #education {
-    .education-certificates {
-
-      &__high-school,
-      &__intermediate-diploma {
-        &__content {
-          &__table {
-            &--laptop {
-              display: none;
-            }
-
-            &--phone {
-              display: inline-block;
-            }
-          }
-        }
-      }
-    }
-
-  }
-
   #home {
     .wrapper {
       height: 200px;
@@ -571,26 +568,53 @@
       }
     }
   }
-}
 
-@media (max-width: layout.$x-small-devices) {
   #education {
-    .education-certificates {
+    background-color: colors.$color-background-n;
 
-      &__high-school,
-      &__intermediate-diploma {
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      &::before {
+        right: 0;
+      }
+      .intermidate-diploma {
+        width: calc(100% - 30px);
+        margin-right: auto;
+        margin-left: 0;
+        &__circle {
+          right: -40px;
+        }
         &__content {
-          &__table {
-            caption{
-              font-size: 20px;
-            }
-            th,
-            td {
-              font-size: 12px;
-            }
+          &__title {
+            font-size: 16px;
+          }
+          &__sub-title {
+            font-size: 16px;
+
+          }
+        }
+      }
+
+      .high-school {
+        width: calc(100% - 30px);
+        margin-right: auto;
+        &__circle {
+          right: -40px;
+        }
+        &__content {
+          &__title {
+            font-size: 16px;
+          }
+          &__sub-title {
+            font-size: 16px;
+
           }
         }
       }
     }
   }
 }
+
+@media (max-width: layout.$x-small-devices) {}
