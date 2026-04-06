@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg px-0 custom-navbar fixed-top">
-  <div class="container d-flex justify-content-between align-items-center">
+{{!-- <nav class="navbar navbar-expand-lg px-0 custom-navbar fixed-top">
+  <div class="container">
     <a href="#home">
-      <img src="assets/images/logo.png" width="55" height="49" alt="Logo" />
+      <img src="assets/images/logo.png" height="55" alt="Logo" />
     </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -70,7 +70,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#education">
               <i class="fa-solid fa-graduation-cap"></i>
-             التعليم
+              التعليم
             </a>
           </li>
 
@@ -113,11 +113,65 @@
           <i class="fa-solid fa-language"></i>
         </a>
         <ul class="dropdown-menu custom-dropdown dropdown-menu-rtl">
-          <li><a class="dropdown-item" href="#" data-lang="ar" aria-label="Change language"><img src="assets/images/sa.svg" alt="Saudi Arabia" width="20"></a></li>
-          <li><a class="dropdown-item" href="#" data-lang="en" aria-label="Change language"><img src="assets/images/us.svg" alt="United States" width="20"></a></li>
+          <li><a class="dropdown-item" href="#" data-lang="ar" aria-label="Change language"><img
+                src="assets/images/sa.svg" alt="Saudi Arabia" width="20"></a></li>
+          <li><a class="dropdown-item" href="#" data-lang="en" aria-label="Change language"><img
+                src="assets/images/us.svg" alt="United States" width="20"></a></li>
         </ul>
       </li>
 
     </ul>
+  </div>
+</nav> --}}
+
+<nav id="custom-navbar">
+  <div class="container">
+    <div class="custom-nav">
+
+      <a href="#home">
+        <img src="assets/images/logo.png" class="custom-nav__logo" height="55" alt="Logo"/>
+      </a>
+
+      <ul class="custom-nav__links">
+        <li><a href="#home" class="custom-nav__links__link custom-nav__links__link--active">
+          الرئيسية
+        </a></li>
+        <li><a href="#about-me" class="custom-nav__links__link">
+          نبذة عني
+        </a></li>
+        <li><a href="#skills" class="custom-nav__links__link">
+          المهارات
+        </a></li>
+        <li><a href="#certificates" class="custom-nav__links__link">
+          الدورات والشهادات 
+        </a></li>
+        <li><a href="#projects-gallery" class="custom-nav__links__link">
+          معرض الأعمال
+        </a></li>
+        <li><a href="#education" class="custom-nav__links__link">
+         التعليم
+        </a></li>
+        <li><a href="#contact" class="custom-nav__links__link">
+         تواصل معي
+        </a></li>
+      </ul>
+
+      <div class="custom-nav__settings">
+        <div class="custom-nav__settings__toggle-theme" id="themeToggle">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+        <div class="custom-nav__settings__languages">
+          <select name="language" id="languageSelect">
+            <option value="ar">
+              عربي
+            </option>
+            <option value="en">
+              English
+            </option>
+          </select>
+        </div>
+      </div>
+
+    </div>
   </div>
 </nav>
