@@ -551,11 +551,8 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    
-
 
     &__forms {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -574,7 +571,6 @@
         text-align: right;
         padding: spacing.spacing("small") spacing.spacing("normal");
         width: 500px;
-        height: auto;
 
         &__label {
           font-weight: 700;
@@ -599,6 +595,7 @@
           box-shadow: none;
           border-radius: 5px;
           outline: none;
+          width: 100%;
           transition: all .2s ease;
 
 
@@ -642,121 +639,6 @@
 
               &:hover {
                 background-color: rgba(colors.$color-white, 0.3);
-              }
-            }
-          }
-        }
-      }
-    }
-
-    &__informations {
-      flex: 1;
-
-      &__title {
-        margin-bottom: spacing.spacing("normal");
-      }
-
-      &__box {
-      display: flex;
-      flex-direction: column;
-      color: colors.$color-white;
-      background: url(../../assets/images/contact-bg.jpg) center no-repeat;
-        background-size: cover;
-      border-radius: 10px;
-      padding: spacing.spacing("normal");
-        &__contacts {
-          margin-bottom: spacing.spacing("normal");
-          padding: spacing.spacing("small")  spacing.spacing("extra-small");
-          border-radius: 10px;
-          color: colors.$color-dark;
-          background-color: colors.$color-white;
-          text-align: right;
-
-          &__group {
-            padding: spacing.spacing("extra-small");
-
-            &__title {
-              margin-bottom: 10px;
-            }
-
-            &__details {
-              width: 100%;
-              display: flex;
-              align-items: center;
-              gap: 1rem;
-
-              &__data {
-                width: 100%;
-                margin-bottom: 0;
-
-                span {
-                  border-radius: 3px;
-                  display: inline-flex;
-                  align-items: center;
-                  padding: 3px 6px;
-                  color: colors.$color-dark;
-                  background-color: transparent;
-
-                  img {
-                    margin-right: 6px;
-                    margin-left: auto;
-                  }
-                }
-
-                &--sub {
-                  span {
-                    color: colors.$color-subdued;
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        &__social-medias {
-          padding: spacing.spacing("small")  spacing.spacing("extra-small");
-          border-radius: 10px;
-          color: colors.$color-dark;
-          background-color: colors.$color-white;
-          box-shadow: 0px 0px 1px colors.$color-gray;
-          text-align: right;
-
-          &__group {
-            padding: spacing.spacing("extra-small");
-
-            &__title {
-              margin-bottom: 10px;
-            }
-
-            &__links {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: right;
-              padding: 0px;
-              margin: 0px;
-              align-items: center;
-              gap: 0.5rem;
-              list-style: none;
-
-              &__link {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 3px 6px;
-                border-radius: 5px;
-                color: colors.$color-dark;
-                border: 1px solid colors.$color-dark;
-                background-color: transparent;
-
-                i {
-                  margin-left: 6px;
-                }
-
-                &:hover {
-                  color: colors.$color-white;
-                  background-color: adjust-color(colors.$color-dark, $lightness: 10%);
-                  transform: translateY(-3px);
-                }
               }
             }
           }
@@ -847,4 +729,12 @@
   }
 }
 
-@media (max-width: layout.$x-small-devices) {}
+@media (max-width: layout.$x-small-devices) {
+  .contact-us {
+    &__forms {
+      &__form {
+        width: 100% !important;
+      }
+    }
+  }
+}

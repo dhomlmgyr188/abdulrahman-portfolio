@@ -11,6 +11,9 @@
 @use './config/layout';
 @use './config/variables';
 
+// hacks folder
+@use './hacks/scrollTopBtn';
+
 // pages folder
 @use './pages/footer';
 @use './pages/navbar';

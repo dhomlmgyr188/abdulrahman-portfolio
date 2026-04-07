@@ -1,0 +1,38 @@
+@use "../config/colors" as colors;
+@use "../config/layout" as layout;
+@use "sass:color";
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: colors.$color-primary;
+    color: colors.$color-white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: 0.3s;
+
+    z-index: 999;
+
+    &:hover {
+        background-color: colors.$color-red-dark;
+        transform: translateY(-5px);
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
