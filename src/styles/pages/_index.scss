@@ -33,73 +33,83 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
   background-color: colors.$color-background;
 
-  .wrapper {
-    position: relative;
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
+  .hero-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    align-items: center;
 
-    img {
-      display: block;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
+    &__my-personal {
+      flex: 0 0 auto;
+      transform: none;
+      width: 280px;
+      position: relative;
+      margin-right: 3rem;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background-color: rgba(255, 0, 0, 0);
-      transition: box-shadow 0.3s ease;
-    }
 
-    &:hover {
-      img {
-        transform: scale(1.1);
+      &__img {
+        height: 350px;
+        width: 100%;
+        border-radius: 50px;
+        position: relative;
+        z-index: 2;
+        display: block;
       }
 
-      &::after {
-        background-color: rgba(colors.$color-primary, 0.06);
+      &__background {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transform: scale(1.05);
+        border-radius: 50px;
       }
     }
-  }
 
-  .custom-btn {
-    border: none;
-    background-color: colors.$color-brand;
-    box-shadow: 0px 2px 0px 2px colors.$color-gray;
-    color: colors.$color-white;
+    &__hero-content {
+      max-width: 600px;
+      text-align: start;
+      flex: 1;
 
-    &:hover {
-      background-color: colors.$color-primary;
-      color: colors.$color-white;
-    }
+      &__title {
+        color: colors.$color-primary;
+      }
 
-    &:active {
-      box-shadow: 0px 1px 0px 1px colors.$color-gray;
-      color: colors.$color-white;
-    }
-  }
+      &__btns {
+        display: flex;
+        gap: 1rem;
 
-  .ghost {
-    background-color: colors.$color-background-n;
-    color: colors.$color-brand;
+        &__btn {
+          font-weight: 400;
+          text-align: center;
+          padding: 10px;
+          border-radius: 10px;
+          background-color: colors.$color-dark;
+          color: colors.$color-white;
+          border: 1px solid transparent;
 
-    &:hover {
-      background-color: colors.$color-background-n;
-      color: colors.$color-primary;
+          i {
+            color: colors.$color-primary;
+            margin-left: 3px;
+          }
+        }
+
+        &__btn--secondary {
+          font-weight: 700;
+          border: 1px solid colors.$color-dark;
+          color: colors.$color-dark;
+          background-color: transparent;
+
+          &:hover {
+            background-color: rgba(colors.$color-dark, 0.1);
+          }
+        }
+      }
     }
   }
 }
@@ -648,14 +658,7 @@
   }
 }
 
-@media (max-width: layout.$medium-devices) {
-  #home {
-    .wrapper {
-      height: 200px;
-      width: 200px;
-    }
-  }
-}
+@media (max-width: layout.$medium-devices) {}
 
 @media (max-width: layout.$small-devices) {
   #projects-gallery {
@@ -727,6 +730,17 @@
       }
     }
   }
+
+  #home {
+    .hero-container {
+      flex-direction: column;
+
+      &__my-personal {
+        margin-right: 0;
+        margin-bottom: 3rem;
+      }
+    }
+  }
 }
 
 @media (max-width: layout.$x-small-devices) {
@@ -734,6 +748,63 @@
     &__forms {
       &__form {
         width: 100% !important;
+      }
+    }
+  }
+
+  // home
+  #home {
+    .hero-container {
+      &__my-personal {
+        width: auto;
+
+        &__img {
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: layout.$xs-small-devices) {
+  // #about-me {
+  //   .stat {
+  //     i.stat-icon {
+  //       font-size: spacing.spacing("small");
+  //     }
+  //   }
+  // }
+
+  // home
+  #home {
+    .hero-container {
+      &__my-personal {
+        width: auto;
+
+        &__img {
+          height: 250px;
+        }
+      }
+
+      &__hero-content {
+        max-width: 600px;
+        text-align: start;
+        flex: 1;
+
+        &__title {
+          color: colors.$color-primary;
+        }
+
+        &__btns {
+          &__btn {
+            padding-right: 15px;
+            padding-left: 15px;
+
+            span {
+              display: none;
+            }
+          }
+        }
       }
     }
   }

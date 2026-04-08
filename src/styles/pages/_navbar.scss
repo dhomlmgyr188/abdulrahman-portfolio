@@ -15,8 +15,9 @@
   background-color: colors.$color-brand-bg;
 
   .custom-nav {
+    flex-direction: row-reverse;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
     &__links {
@@ -82,24 +83,23 @@
 
 @media (max-width: layout.$medium-devices) {
   #custom-navbar {
-
     .custom-nav {
-      justify-content: space-between;
-
       &__links {
         position: absolute;
         top: 60px;
         right: 0;
         width: 100%;
-        height: 100vh;
+        min-height: calc(100vh - 60px);
         background-color: colors.$color-brand-bg;
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        padding: 20px 0;
         transform: translateY(-150%);
         transition: 0.3s ease;
 
+        &__link {
+          padding: 5px 30px;
+        }
       }
 
 

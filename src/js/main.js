@@ -82,3 +82,20 @@ scrollTopBtn.addEventListener("click", () => {
     behavior: "smooth"
   });
 });
+
+const textarea = document.getElementById("message");
+  const counter = document.querySelector(".contact-us__forms__form__note");
+  const maxLength = 300;
+
+  textarea.addEventListener("input", function () {
+    let currentLength = textarea.value.length;
+
+    // منع تجاوز 300 حرف
+    if (currentLength > maxLength) {
+      textarea.value = textarea.value.substring(0, maxLength);
+      currentLength = maxLength;
+    }
+
+    // تحديث العداد
+    counter.textContent = currentLength + " / " + maxLength;
+  });
