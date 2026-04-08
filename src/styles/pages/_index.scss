@@ -757,7 +757,6 @@
     .hero-container {
       &__my-personal {
         width: auto;
-
         &__img {
           height: 250px;
         }
@@ -778,23 +777,7 @@
   // home
   #home {
     .hero-container {
-      &__my-personal {
-        width: auto;
-
-        &__img {
-          height: 250px;
-        }
-      }
-
       &__hero-content {
-        max-width: 600px;
-        text-align: start;
-        flex: 1;
-
-        &__title {
-          color: colors.$color-primary;
-        }
-
         &__btns {
           &__btn {
             padding-right: 15px;
