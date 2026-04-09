@@ -99,3 +99,7 @@ const textarea = document.getElementById("message");
     // تحديث العداد
     counter.textContent = currentLength + " / " + maxLength;
   });
+
+  const yearElement = document.getElementById('current-year');
+  const currentYear = new Date().getFullYear();
+  yearElement.textContent = currentYear;

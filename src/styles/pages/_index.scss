@@ -562,7 +562,122 @@
     flex-wrap: wrap;
     gap: 2rem;
 
+    &__contact-infos {
+      flex: 1;
+      text-align: center;
+
+      &__title {
+        margin-bottom: spacing.spacing("normal");
+      }
+
+      &__content {
+        &__container {
+          display: flex;
+          flex-direction: column;
+          border-bottom: 1px solid colors.$color-gray;
+          padding: spacing.spacing("small");
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &__title {
+            margin-bottom: 16px;
+          }
+
+          &__data {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &__number {
+              margin-bottom: 0;
+
+              img {
+                margin-left: 5px;
+              }
+            }
+
+            &__email {
+              margin-bottom: 0;
+
+              img {
+                margin-left: 5px;
+              }
+            }
+          }
+
+          &__social {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 8px;
+
+            &__link {
+              color: colors.$color-white;
+
+              &--whatsapp {
+                background: adjust-color(colors.$color-whatsapp, $lightness: -5%);
+
+                &:hover {
+                  background: adjust-color(colors.$color-whatsapp, $lightness: 10%);
+                }
+              }
+
+              &--linkedin {
+                background: adjust-color(colors.$color-linkedin, $lightness: -5%);
+
+                &:hover {
+                  background: adjust-color(colors.$color-linkedin, $lightness: 10%);
+                }
+              }
+
+              &--github {
+                background: adjust-color(colors.$color-github, $lightness: -5%);
+
+                &:hover {
+                  background: adjust-color(colors.$color-github, $lightness: 10%);
+                }
+              }
+
+              &--instagram {
+                background: adjust-color(colors.$color-instgram, $lightness: -5%);
+
+                &:hover {
+                  background: adjust-color(colors.$color-instgram, $lightness: 10%);
+                }
+              }
+
+              &--snapchat {
+                background: adjust-color(colors.$color-snap, $lightness: -5%);
+
+                &:hover {
+                  background: adjust-color(colors.$color-snap, $lightness: 10%);
+                }
+              }
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 20px;
+              height: 40px;
+              width: 40px;
+              border-radius: 50%;
+            }
+          }
+
+          &__frt {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
     &__forms {
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -658,22 +773,21 @@
   }
 }
 
-@media (max-width: layout.$medium-devices) {}
+@media (max-width: layout.$medium-devices) {
+  #contact {
+    .contact-us {
+      gap: 2rem;
+    }
+  }
+}
 
 @media (max-width: layout.$small-devices) {
+
   #projects-gallery {
     .projects {
       .project {
         gap: 0;
         flex-direction: column;
-
-        &__gallery {
-          &__carousel {
-            img {
-              height: 200px;
-            }
-          }
-        }
       }
     }
   }
@@ -744,6 +858,27 @@
 }
 
 @media (max-width: layout.$x-small-devices) {
+  #contact {
+    .contact-us {
+      flex-direction: column;
+      justify-content: center;
+
+      &__contact-infos {
+        &__content {
+          &__container {
+            &__social {
+              &__link {
+                font-size: 16px;
+                width: 30px;
+                height: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   .contact-us {
     &__forms {
       &__form {
@@ -757,24 +892,13 @@
     .hero-container {
       &__my-personal {
         width: auto;
-        &__img {
-          height: 250px;
-        }
       }
     }
   }
 }
 
 @media (max-width: layout.$xs-small-devices) {
-  // #about-me {
-  //   .stat {
-  //     i.stat-icon {
-  //       font-size: spacing.spacing("small");
-  //     }
-  //   }
-  // }
 
-  // home
   #home {
     .hero-container {
       &__hero-content {

@@ -1,3 +1,145 @@
 @use "../config/colors" as colors;
 @use "../config/layout" as layout;
+@use "../utilities/spacing" as spacing;
 @use "sass:color";
+
+#footer {
+    color: colors.$color-white;
+    background: adjust-color(colors.$color-dark, $lightness: 5%);
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: start;
+        gap: 2rem;
+
+        &__img {
+            height: 130px;
+        }
+
+        &__quick-about {
+            &__desc {
+                margin-bottom: 0;
+                max-width: 450px;
+            }
+        }
+
+        &__quick-link {
+
+            &__cont {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                &__link {
+                    font-weight: 700;
+                    border-radius: 3px;
+                    background-color: colors.$color-primary;
+                    color: colors.$color-white;
+                    padding: 3px 6px;
+                }
+            }
+        }
+
+        &__cta {
+            &__disc{
+                max-width: 300px;
+            }
+            &__btn {
+                font-weight: 700;
+                border-radius: 10px;
+                text-align: center;
+                font-size: 18px;
+                display: inline-block;
+                width: 100%;
+                color: colors.$color-dark;
+                background: radial-gradient(circle, colors.$color-yellow, colors.$color-yellow-dark);
+                padding: spacing.spacing("extra-small");
+                transition: all .5s ease;
+
+
+                &:hover {
+                    transform: translateY(-8px);
+                    background: radial-gradient(circle, colors.$color-yellow-dark, colors.$color-yellow);
+                }
+            }
+        }
+    }
+
+    .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60px;
+        color: colors.$color-white;
+        background-color: colors.$color-brand-bg;
+
+        .copyright {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            &__content {
+                margin-bottom: 0;
+                span{
+                    font-weight: 700;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+@media (max-width: layout.$x-large-devices) {
+    #footer {
+        .content {
+            &__quick-about {
+                &__desc {
+                    max-width: 350px;
+                }
+            }
+
+            &__cta {
+                &__disc {
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: layout.$large-devices) {
+    #footer {
+        .content {
+            &__quick-about {
+                &__desc {
+                    max-width: 300px;
+                }
+            }
+
+            &__cta {
+                &__disc {
+                    max-width: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: layout.$medium-devices) {
+    #footer {
+        .content {
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+    }
+}
