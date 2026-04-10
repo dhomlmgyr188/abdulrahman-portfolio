@@ -1,32 +1,46 @@
 {{> layout-top title="عبدالرحمن ناصر المغير | Portfolio "}}
 
 <section id="home">
-  <div class="container hero-container text-center p-5">
-    <div class="hero-container__my-personal">
-      <img src="assets/images/me2.png" alt="me" class="hero-container__my-personal__img">
-      <div class="hero-container__my-personal__background"></div>
-    </div>
-    <div class="hero-container__hero-content">
-      <h1 class="hero-container__hero-content__title">أهلاً وسهلاً بكم, حضوركم يملئ الموقع بهجة ونور.</h1>
-      <p class="hero-container__hero-content__desc">
-        أنا عبدالرحمن المغير , أسعى للحصول على وظيفة بدوام كامل في "مطور مواقع الكترونية", "مطور واجهات
-        المستخدم","الوسائط المتعددة وتقنيات الويب" لدي عدة مشاريع يمكنك الاطلاع عليها ومرفق لكم سيرتي الذاتية وشكرا.
-      </p>
-      <div class="hero-container__hero-content__btns">
-        <a href="assets/docs/abdulrahman-cv-long-public.pdf" target="_blank"
-          class="hero-container__hero-content__btns__btn">
-          <i class="fa-solid fa-file"></i>
-          السيرة الذاتية
-        </a>
-        <a href="#projects-gallery" class="hero-container__hero-content__btns__btn
-        hero-container__hero-content__btns__btn--secondary">
-          <i class="fa-solid fa-folder-tree"></i>
-          <span>استعرض أعمالي</span>
-        </a>
+  <div class="container hero-container p-5">
+    <div class="hero-content">
+      <p class="hero-content__desc">أهلاً وسهلاً بكم, حضوركم يملئ موقعي بهجة ونور.</p>
+      <h1 class="hero-content__title">أنا عبدالرحمن المغير <span>مطور ويب متكامل</span>, أصمم وأطور مواقع ويب حديثة تركز على تجربة المستخدم</h1>
+      <div class="hero-content__buttons">
+        <a href="assets/docs/abdulrahman-cv-long-public.pdf" target="_blank" class="hero-content__buttons__link"><img src="assets/images/cv.png" alt="cv"> السيرة الذاتية</a>
+        <a href="#projects-gallery" class="hero-content__buttons__link hero-content__buttons__link--ghost"> <img src="assets/images/idea.png" alt="projects"> استعرض أعمالي</a>
       </div>
     </div>
   </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <section id="about-me">
   <div class="container text-center p-5">
@@ -116,124 +130,57 @@
 <section id="skills">
   <div class="container text-center p-5">
     <h1>المهارات ⚙️ </h1>
-    <div class="row justify-content-center g-4">
-
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/html-5-svgrepo-com.svg" alt="html" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">HTML5</h3>
-          <span class="custom-skill-card__level">متقدم</span>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="skills">
+          <h3 class="skills__title skills__title--front-end" data-target="front-end"><span><i class="fa-solid fa-code"></i>الواجهة الأمامية</span></h3>
+          <div class="skills__skill-container">
+            <div class="skills__skill-container__iner" id="front-end">
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--html"><img src="assets/images/html-5-svgrepo-com.svg" alt="html-5">HTML5</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--css"><img src="assets/images/css-3-svgrepo-com.svg" alt="css-3">CSS3</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--js"><img src="assets/images/javascript-r.svg" alt="javascript">JavaScript</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--sass"><img src="assets/images/sass-svgrepo-com.svg" alt="sass">Sass</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--bootstrap"><img src="assets/images/bootstrap-svgrepo-com.svg" alt="bootstrap">Bootstrap</span>
+          </div>
+          </div>
         </div>
       </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/css-3-svgrepo-com.svg" alt="css" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">CSS3</h3>
-          <span class="custom-skill-card__level">متقدم</span>
+      <div class="col-12 col-md-6">
+        <div class="skills">
+          <h3 class="skills__title skills__title--build" data-target="build"><span><i class="fa-solid fa-gear"></i>الأدوات والبناء </span></h3>
+          <div class="skills__skill-container">
+            <div class="skills__skill-container__iner" id="build">
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--vite"><img src="assets/images/vite-svgrepo-com.svg" alt="vite">Vite</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--webpack"><img src="assets/images/webpack-svgrepo-com.svg" alt="webpack">Webpack</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--git"><img src="assets/images/git-svgrepo-com.svg" alt="git">Git</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--github"><img src="assets/images/github-142-svgrepo-com.svg" alt="github">Github</span>
+          </div>
+          </div>
         </div>
       </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/js-svgrepo-com.svg" alt="javascript" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Javascript</h3>
-          <span class="custom-skill-card__level">متوسط</span>
+      <div class="col-12 col-md-6">
+        <div class="skills">
+          <h3 class="skills__title skills__title--back-end" data-target="back-end"><span><i class="fa-solid fa-server"></i>الواجهة الخلفية</span></h3>
+          <div class="skills__skill-container">
+            <div class="skills__skill-container__iner" id="back-end">
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--mysql"><img src="assets/images/mysql.svg" alt="mysql">MySQL</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--php"><img src="assets/images/php-svgrepo-com.svg" alt="php">PHP</span>
+          </div>
+          </div>
         </div>
       </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/sass-svgrepo-com.svg" alt="sass" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Sass</h3>
-          <span class="custom-skill-card__level">متقدم</span>
+      <div class="col-12 col-md-6">
+        <div class="skills">
+          <h3 class="skills__title skills__title--design" data-target="design"><span><i class="fa-solid fa-pen-nib"></i>التصميم </span></h3>
+          <div class="skills__skill-container">
+            <div class="skills__skill-container__iner" id="design">
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--photoshop"><img src="assets/images/photoshop-svgrepo-com.svg" alt="photoshop">Photoshop</span>
+              <span class="skills__skill-container__iner__skill skills__skill-container__iner__skill--figma"><img src="assets/images/figma-svgrepo-com.svg" alt="figma">Figma</span>
+          </div>
+          </div>
         </div>
       </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/bootstrap-svgrepo-com.svg" alt="bootstrap" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Bootstrap</h3>
-          <span class="custom-skill-card__level">متقدم</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/vite-svgrepo-com.svg" alt="vite" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Vite</h3>
-          <span class="custom-skill-card__level">متوسط</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/webpack-svgrepo-com.svg" alt="webpack" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Webpack</h3>
-          <span class="custom-skill-card__level">متوسط</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/git-svgrepo-com.svg" alt="git" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Git</h3>
-          <span class="custom-skill-card__level">متقدم</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/github-142-svgrepo-com.svg" alt="github" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Github</h3>
-          <span class="custom-skill-card__level">متقدم</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/mysql-logo-svgrepo-com.svg" alt="mysql" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">MySQL</h3>
-          <span class="custom-skill-card__level">متقدم</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/php-svgrepo-com.svg" alt="php" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">PHP</h3>
-          <span class="custom-skill-card__level">أساسي</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/python-svgrepo-com.svg" alt="python" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Python</h3>
-          <span class="custom-skill-card__level">أساسي</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/java-svgrepo-com.svg" alt="java" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Java</h3>
-          <span class="custom-skill-card__level">أساسي</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/wordpress-color-svgrepo-com.svg" alt="wordpress" height="50"
-            class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Wordpress</h3>
-          <span class="custom-skill-card__level">جيد</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/figma-svgrepo-com.svg" alt="figma" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Figma</h3>
-          <span class="custom-skill-card__level">جيد</span>
-        </div>
-      </div>
-      <div class="col-6 col-lg-2 col-md-3 col-sm-4">
-        <div class="custom-skill-card">
-          <img src="assets/images/photoshop-svgrepo-com.svg" alt="photoshop" height="50" class="custom-skill-card__img">
-          <h3 class="custom-skill-card__title">Photoshop</h3>
-          <span class="custom-skill-card__level">متقدم</span>
-        </div>
-      </div>
-
     </div>
-  </div>
   </div>
 </section>
 

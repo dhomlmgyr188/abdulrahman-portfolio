@@ -103,3 +103,22 @@ const textarea = document.getElementById("message");
   const yearElement = document.getElementById('current-year');
   const currentYear = new Date().getFullYear();
   yearElement.textContent = currentYear;
+
+const titles = document.querySelectorAll(".skills__title");
+
+titles.forEach(title => {
+  title.addEventListener("click", () => {
+    const targetId = title.getAttribute("data-target");
+
+    const inner = document.getElementById(targetId); // هذا inner
+    const container = inner.parentElement; // هذا container
+
+    if (container.style.maxHeight) {
+      container.style.maxHeight = null;
+      title.classList.remove("active");
+    } else {
+      container.style.maxHeight = inner.scrollHeight + "px";
+      title.classList.add("active");
+    }
+  });
+});

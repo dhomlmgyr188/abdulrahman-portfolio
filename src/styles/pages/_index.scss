@@ -31,82 +31,69 @@
 // home
 #home {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: calc(100vh - 60px);
-  background-color: colors.$color-background;
+  background-color: colors.$color-dark;
 
-  .hero-container {
+  .hero-content {
     display: flex;
     justify-content: center;
-    flex-direction: row-reverse;
     align-items: center;
+    flex-direction: column;
+    gap: spacing.spacing("small");
+    text-align: center;
 
-    &__my-personal {
-      flex: 0 0 auto;
-      transform: none;
-      width: 280px;
-      position: relative;
-      margin-right: 3rem;
+    &__desc {
+      color: colors.$color-gray;
+      margin-bottom: 0;
+      font-size: 18px;
+    }
 
+    &__title {
+      color: colors.$color-white;
+      line-height: 1.8;
+      font-size: 38px !important;
+      font-weight: 400;
+      max-width: 700px;
 
-      &__img {
-        height: 350px;
-        width: 100%;
-        border-radius: 50px;
-        position: relative;
-        z-index: 2;
-        display: block;
-      }
-
-      &__background {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        transform: scale(1.05);
-        border-radius: 50px;
+      span {
+        color: colors.$color-primary;
+        font-weight: 700;
       }
     }
 
-    &__hero-content {
-      max-width: 600px;
-      text-align: start;
-      flex: 1;
+    &__buttons {
+      display: flex;
+      gap: spacing.spacing("small");
 
-      &__title {
-        color: colors.$color-primary;
-      }
-
-      &__btns {
-        display: flex;
-        gap: 1rem;
-
-        &__btn {
-          font-weight: 400;
-          text-align: center;
-          padding: 10px;
-          border-radius: 10px;
-          background-color: colors.$color-dark;
-          color: colors.$color-white;
-          border: 1px solid transparent;
-
-          i {
-            color: colors.$color-primary;
-            margin-left: 3px;
-          }
+      &__link {
+        img {
+          margin-left: 5px;
+          height: 28px;
         }
 
-        &__btn--secondary {
-          font-weight: 700;
-          border: 1px solid colors.$color-dark;
-          color: colors.$color-dark;
-          background-color: transparent;
+        text-align: center;
+        font-weight: 700;
+        border: 2px solid adjust-color(colors.$color-primary, $lightness: 5%);
+        border-radius: 8px;
+        color: colors.$color-white;
+        background: colors.$color-primary;
+        padding: spacing.spacing("extra-small") spacing.spacing("normal");
+
+        &:hover {
+          background: adjust-color(colors.$color-primary, $lightness: 5%);
+        }
+      }
+
+      &__link {
+        &--ghost {
+          background: transparent;
+          color: colors.$color-white;
+          border-color: colors.$color-white;
 
           &:hover {
-            background-color: rgba(colors.$color-dark, 0.1);
+            background: rgba(colors.$color-white, 0.1)
           }
         }
       }
@@ -169,46 +156,198 @@
 }
 
 #skills {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: colors.$color-background;
 
-  h3 {
-    color: colors.$color-gray;
-
-    &.custom-border-bottom {
-      border-bottom: 3px solid colors.$color-gray;
-    }
-  }
-
-  .custom-skill-card {
-    background: colors.$color-white;
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
+  .skills {
+    text-align: right;
 
     &__title {
-      font-size: 18px;
-      margin: 10px 0;
+      color: colors.$color-dark;
+      padding: spacing.spacing("small") 0;
+
+      span {
+        i {
+          margin-left: spacing.spacing("extra-small");
+        }
+      }
+
+      &--front-end {
+        border-bottom: 2px solid colors.$color-bootstrap;
+
+        i {
+          color: colors.$color-bootstrap;
+        }
+      }
+
+      &--build {
+        border-bottom: 2px solid colors.$color-webpack;
+
+        i {
+          color: colors.$color-webpack;
+        }
+      }
+
+      &--back-end {
+        border-bottom: 2px solid colors.$color-php;
+
+        i {
+          color: colors.$color-php;
+        }
+      }
+
+      &--design {
+        border-bottom: 2px solid colors.$color-figma;
+
+        i {
+          color: colors.$color-figma;
+        }
+      }
     }
 
-    &__level {
-      display: inline-block;
-      padding: 4px 10px;
-      background: colors.$color-gray;
-      color: colors.$color-white;
-      border-radius: 8px;
-      font-size: 12px;
+    &__skill-container {
+
+      &__iner {
+        display: flex;
+        flex-wrap: wrap;
+        padding: spacing.spacing("small") 0;
+        gap: spacing.spacing("extra-small");
+
+        &__skill {
+          font-weight: 500;
+          transition: all .3s ease;
+          padding: 6px spacing.spacing("small");
+          border-radius: 32px;
+          border-style: solid;
+          border-width: 1px;
+          cursor: pointer;
+
+          &--html {
+            background-color: rgba(colors.$color-html, 0.3);
+            border-color: colors.$color-html;
+
+            &:hover {
+              background-color: rgba(colors.$color-html, 0.5);
+            }
+          }
+
+          &--css {
+            background-color: rgba(colors.$color-css, 0.3);
+            border-color: colors.$color-css;
+
+            &:hover {
+              background-color: rgba(colors.$color-css, 0.5);
+            }
+          }
+
+          &--js {
+            background-color: rgba(colors.$color-js, 0.3);
+            border-color: colors.$color-js;
+
+            &:hover {
+              background-color: rgba(colors.$color-js, 0.5);
+            }
+          }
+
+          &--sass {
+            background-color: rgba(colors.$color-sass, 0.3);
+            border-color: colors.$color-sass;
+
+            &:hover {
+              background-color: rgba(colors.$color-sass, 0.5);
+            }
+          }
+
+          &--bootstrap {
+            background-color: rgba(colors.$color-bootstrap, 0.3);
+            border-color: colors.$color-bootstrap;
+
+            &:hover {
+              background-color: rgba(colors.$color-bootstrap, 0.5);
+            }
+          }
+
+          &--vite {
+            background-color: rgba(colors.$color-vite, 0.3);
+            border-color: colors.$color-vite;
+
+            &:hover {
+              background-color: rgba(colors.$color-vite, 0.5);
+            }
+          }
+
+          &--webpack {
+            background-color: rgba(colors.$color-webpack, 0.3);
+            border-color: colors.$color-webpack;
+
+            &:hover {
+              background-color: rgba(colors.$color-webpack, 0.5);
+            }
+          }
+
+          &--git {
+            background-color: rgba(colors.$color-git, 0.3);
+            border-color: colors.$color-git;
+
+            &:hover {
+              background-color: rgba(colors.$color-git, 0.5);
+            }
+          }
+
+          &--github {
+            background-color: rgba(colors.$color-github, 0.3);
+            border-color: colors.$color-github;
+
+            &:hover {
+              background-color: rgba(colors.$color-github, 0.5);
+            }
+          }
+
+          &--mysql {
+            background-color: rgba(colors.$color-mysql, 0.3);
+            border-color: colors.$color-mysql;
+
+            &:hover {
+              background-color: rgba(colors.$color-mysql, 0.5);
+            }
+          }
+
+          &--php {
+            background-color: rgba(colors.$color-php, 0.3);
+            border-color: colors.$color-php;
+
+            &:hover {
+              background-color: rgba(colors.$color-php, 0.5);
+            }
+          }
+
+          &--photoshop {
+            background-color: rgba(colors.$color-photoshop, 0.3);
+            border-color: colors.$color-photoshop;
+
+            &:hover {
+              background-color: rgba(colors.$color-photoshop, 0.5);
+            }
+          }
+
+          &--figma {
+            background-color: rgba(colors.$color-figma, 0.3);
+            border-color: colors.$color-figma;
+
+            &:hover {
+              background-color: rgba(colors.$color-figma, 0.5);
+            }
+          }
+
+          img {
+            height: 30px;
+            margin-left: spacing.spacing("extra-small");
+          }
+        }
+      }
     }
   }
 }
+
 
 #certificates {
   background-color: colors.$color-background-n;
@@ -782,6 +921,60 @@
 }
 
 @media (max-width: layout.$small-devices) {
+  #skills {
+    .skills {
+      &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        span {
+          i {
+            margin-left: spacing.spacing("extra-small");
+          }
+        }
+
+        &::after {
+          content: "➤";
+          font-size: 18px;
+          transition: transform 0.3s ease;
+          transform: rotate(90deg);
+        }
+
+        &.active::after {
+          transform: rotate(-90deg);
+        }
+      }
+
+      &__skill-container {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        padding: 0 !important;
+
+
+        &__iner {
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: spacing.spacing("extra-small");
+
+          &__skill {
+            img {
+              height: 25px;
+            }
+          }
+        }
+      }
+
+      &__skill-container.active {
+        .skills__skill-container__iner {
+          padding: spacing.spacing("small") 0;
+        }
+      }
+    }
+  }
 
   #projects-gallery {
     .projects {
@@ -889,9 +1082,23 @@
 
   // home
   #home {
-    .hero-container {
-      &__my-personal {
-        width: auto;
+    .hero-content {
+      &__desc {
+        font-size: 14px;
+      }
+
+      &__title {
+        font-size: 30px !important;
+      }
+      &__buttons {
+        gap: spacing.spacing("small");
+
+        &__link {
+          padding: 6px spacing.spacing("extra-small");
+          img {
+            display: none;
+          }
+        }
       }
     }
   }
