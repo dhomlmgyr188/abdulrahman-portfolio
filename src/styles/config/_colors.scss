@@ -11,8 +11,7 @@ $color-dark: #1f1f1f;
 
 $color-white: #fff;
 $color-gray: #888;
-$color-background: #fafafa;
-$color-background-n: #f1f1f1;
+$color-background: $color-white;
 $color-link: #007adf;
 
 $color-subdued: #979797;
@@ -21,6 +20,9 @@ $color-brand: $color-red-dark;
 $color-brand-bg: $color-dark;
 $color-primary: $color-red;
 $color-content: $color-dark;
+
+$color-background-one: #f0f0f0;
+$color-background-two: #dfdfdf;
 
 $color-whatsapp: #15AB0C;
 $color-github: #1F1F1F;

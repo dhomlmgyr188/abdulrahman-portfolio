@@ -2,19 +2,23 @@
 @use "../config/layout" as layout;
 @use "sass:color";
 
+.nav-bg {
+  background-color: colors.$color-brand-bg;
+}
+
 #custom-navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
-  background-color: colors.$color-brand-bg;
+
 
   .custom-nav {
+    height: 60px;
     flex-direction: row-reverse;
     display: flex;
     justify-content: space-between;
@@ -87,15 +91,16 @@
       &__links {
         position: absolute;
         top: 60px;
-        right: 0;
         width: 100%;
+        
+        max-width: 700px;
         min-height: calc(100vh - 60px);
-        background-color: colors.$color-brand-bg;
         flex-direction: column;
         align-items: center;
         gap: 15px;
         transform: translateY(-150%);
         transition: 0.3s ease;
+        background-color: colors.$color-brand-bg;
 
         &__link {
           padding: 5px 30px;
@@ -114,6 +119,27 @@
         border: none;
         color: colors.$color-white;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: layout.$small-devices) {
+  #custom-navbar {
+    .custom-nav {
+      &__links {
+        max-width: 520px;
+      }
+    }
+  }
+}
+
+@media(max-width: layout.$x-small-devices) {
+
+  #custom-navbar {
+    .custom-nav {
+      &__links {
+        right: 0;
       }
     }
   }

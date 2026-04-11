@@ -3,9 +3,22 @@
 @use "../config/layout" as layout;
 @use "sass:color";
 
-// rest
+//bg
+.bg-one {
+  background-color: colors.$color-background-one;
+}
 
-#about-me,
+.bg-two {
+  background-color: colors.$color-background-two;
+}
+
+.bg-hero {
+  background-color: colors.$color-dark;
+}
+
+
+
+// rest
 #skills,
 #certificates,
 #projects-gallery,
@@ -30,11 +43,12 @@
 
 // home
 #home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: calc(100vh - 60px);
-  background-color: colors.$color-dark;
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+  }
 
   .hero-content {
     display: flex;
@@ -102,61 +116,65 @@
 }
 
 #about-me {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: colors.$color-background-n;
-
-  ul {
-    list-style: none;
-    padding: spacing.spacing("extra-small") 0px;
-
-    .li-about {
-      padding: spacing.spacing("extra-small") 0px;
-    }
-  }
-
-  .li-about,
-  .stat {
-    border-radius: 5px;
+  .about {
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: inset 0px 0px 0px 1px colors.$color-gray;
-    background-color: colors.$color-background;
-    color: colors.$color-gray;
-    padding: spacing.spacing("small") 0px;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    gap: spacing.spacing("normal");
 
-    i.stat-icon {
-      font-size: spacing.spacing("normal");
-    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      gap: spacing.spacing("small");
 
-    p {
-      margin-bottom: 0;
 
-      .stat-num {
-        color: colors.$color-primary;
-        font-size: spacing.spacing("small");
+      &__desc {
+        max-width: 600px;
+        margin-bottom: 0;
+        padding: spacing.spacing("extra-small");
+        border-top: 1px solid colors.$color-gray;
+        border-bottom: 1px solid colors.$color-gray;
+      }
+
+      &__contact {
+        text-align: center;
+        font-weight: 700;
+        border-radius: 10px;
+        color: colors.$color-white;
+        background: colors.$color-primary;
+        padding: spacing.spacing("extra-small") spacing.spacing("small");
+        transition: all .3s ease;
+
+        &:hover {
+          background: colors.$color-brand;
+        }
+
+        i {
+          margin-left: 5px;
+        }
       }
     }
 
-    h3 {
-      margin-bottom: 0;
-      color: colors.$color-primary;
-    }
+    &__my {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid colors.$color-primary;
+      box-shadow: 0 5px 20px rgba(colors.$color-dark, 0.5);
 
-    &:hover {
-      box-shadow: inset 0px 0px 0px 1px colors.$color-dark;
-      transform: translateY(-2px);
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scaleX(-1);
+      }
     }
   }
 }
 
 #skills {
-  background-color: colors.$color-background;
 
   .skills {
     text-align: right;
@@ -350,7 +368,6 @@
 
 
 #certificates {
-  background-color: colors.$color-background-n;
 
   .custom-certificates-card {
     display: flex;
@@ -436,7 +453,7 @@
         border-radius: 5px;
         padding: 3px 5px;
         color: colors.$color-gray;
-        background-color: colors.$color-background-n;
+        background-color: colors.$color-background;
       }
 
       &__title {
@@ -454,7 +471,6 @@
 }
 
 #projects-gallery {
-  background-color: colors.$color-background;
 
   .projects {
     display: flex;
@@ -462,9 +478,9 @@
     gap: 25px;
 
     .project {
-      border-bottom: 3px solid colors.$color-background-n;
+      border-bottom: 3px solid colors.$color-background;
       padding-bottom: 25px;
-
+      
       &:last-child {
         border-bottom: none;
         padding-bottom: 0;
@@ -494,6 +510,7 @@
         &__title {
           color: colors.$color-dark;
           margin-bottom: 8px;
+        span{color: colors.$color-primary; font-style: italic;}
         }
 
         &__desc {
@@ -608,7 +625,6 @@
 }
 
 #education {
-  background-color: colors.$color-background-n;
 
   .timeline {
     position: relative;
@@ -641,7 +657,7 @@
         width: 30px;
         border-radius: 50%;
         background-color: colors.$color-primary;
-        border: 5px solid colors.$color-background-n;
+        border: 5px solid colors.$color-background;
         bottom: 50%;
         left: -55px;
       }
@@ -673,7 +689,7 @@
         width: 30px;
         border-radius: 50%;
         background-color: colors.$color-subdued;
-        border: 5px solid colors.$color-background-n;
+        border: 5px solid colors.$color-background;
         bottom: 50%;
         right: -55px;
       }
@@ -692,7 +708,6 @@
 }
 
 #contact {
-  background-color: colors.$color-background;
 
   .contact-us {
     display: flex;
@@ -913,6 +928,19 @@
 }
 
 @media (max-width: layout.$medium-devices) {
+  #about-me {
+    .about {
+      flex-direction: column-reverse !important;
+      &__content {text-align: center;}
+
+      &__my {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+      }
+    }
+  }
+
   #contact {
     .contact-us {
       gap: 2rem;
@@ -921,6 +949,7 @@
 }
 
 @media (max-width: layout.$small-devices) {
+  
   #skills {
     .skills {
       &__title {
@@ -986,7 +1015,7 @@
   }
 
   #education {
-    background-color: colors.$color-background-n;
+    background-color: colors.$color-background;
 
     .timeline {
       display: flex;
@@ -1090,11 +1119,13 @@
       &__title {
         font-size: 30px !important;
       }
+
       &__buttons {
         gap: spacing.spacing("small");
 
         &__link {
           padding: 6px spacing.spacing("extra-small");
+
           img {
             display: none;
           }
