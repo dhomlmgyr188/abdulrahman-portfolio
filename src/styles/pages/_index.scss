@@ -44,11 +44,48 @@
 // home
 #home {
   .hero {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: calc(100vh - 60px);
+
+    .down {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: spacing.spacing("normal") spacing.spacing("extra-small");
+      background: linear-gradient(to bottom, colors.$color-dark 50%, colors.$color-background-two);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: absolute;
+      color: colors.$color-white;
+      bottom: 0;
+
+      h2 {
+        margin-bottom: 0;
+      }
+
+      a {
+        i {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: spacing.spacing("extra-small");
+          font-size: 24px;
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          color: colors.$color-dark;
+          background-color: colors.$color-primary;
+        }
+      }
+    }
   }
+
 
   .hero-content {
     display: flex;
@@ -68,7 +105,6 @@
       color: colors.$color-white;
       line-height: 1.8;
       font-size: 38px !important;
-      font-weight: 400;
       max-width: 700px;
 
       span {
@@ -88,7 +124,6 @@
         }
 
         text-align: center;
-        font-weight: 700;
         border: 2px solid adjust-color(colors.$color-primary, $lightness: 5%);
         border-radius: 8px;
         color: colors.$color-white;
@@ -139,7 +174,6 @@
 
       &__contact {
         text-align: center;
-        font-weight: 700;
         border-radius: 10px;
         color: colors.$color-white;
         background: colors.$color-primary;
@@ -181,7 +215,7 @@
 
     &__title {
       color: colors.$color-dark;
-      padding: spacing.spacing("small") 0;
+      padding: spacing.spacing("small");
 
       span {
         i {
@@ -231,7 +265,6 @@
         gap: spacing.spacing("extra-small");
 
         &__skill {
-          font-weight: 500;
           transition: all .3s ease;
           padding: 6px spacing.spacing("small");
           border-radius: 32px;
@@ -436,7 +469,7 @@
         color: colors.$color-white;
 
         &--one {
-          background-color: colors.$color-brand;
+          background-color: colors.$color-primary;
         }
 
         &--two {
@@ -478,9 +511,9 @@
     gap: 25px;
 
     .project {
-      border-bottom: 3px solid colors.$color-background;
+      border-bottom: 2px solid colors.$color-gray;
       padding-bottom: 25px;
-      
+
       &:last-child {
         border-bottom: none;
         padding-bottom: 0;
@@ -510,7 +543,11 @@
         &__title {
           color: colors.$color-dark;
           margin-bottom: 8px;
-        span{color: colors.$color-primary; font-style: italic;}
+
+          span {
+            color: colors.$color-primary;
+            font-style: italic;
+          }
         }
 
         &__desc {
@@ -527,8 +564,7 @@
             border-radius: 5px;
             text-align: center;
             color: colors.$color-white;
-            background-color: colors.$color-brand;
-            font-weight: 600;
+            background-color: colors.$color-primary;
             padding: 3px 9px;
           }
         }
@@ -540,7 +576,6 @@
           margin: 16px 0px;
 
           &__link {
-            font-weight: 600;
             border-radius: 10px;
             padding: 5px 10px;
             background-color: colors.$color-dark;
@@ -555,7 +590,6 @@
             }
 
             &--ghost {
-              font-weight: 400;
               background-color: transparent;
               border: 1px solid black;
               color: black;
@@ -607,7 +641,6 @@
               border-radius: 5px;
               color: colors.$color-white;
               font-size: 18px;
-              font-weight: bold;
               background-color: rgba(colors.$color-dark, 0.5);
               transition: all 0.2s ease;
 
@@ -852,11 +885,9 @@
         width: 500px;
 
         &__label {
-          font-weight: 700;
           color: colors.$color-white;
 
           &__req {
-            font-weight: 700;
             color: colors.$color-primary;
           }
 
@@ -908,7 +939,6 @@
             background-color: colors.$color-white;
             border: 2px solid transparent;
             border-radius: 5px;
-            font-weight: 700;
             transition: all .3s ease;
 
             &--reset {
@@ -931,7 +961,10 @@
   #about-me {
     .about {
       flex-direction: column-reverse !important;
-      &__content {text-align: center;}
+
+      &__content {
+        text-align: center;
+      }
 
       &__my {
         width: 200px;
@@ -949,7 +982,23 @@
 }
 
 @media (max-width: layout.$small-devices) {
-  
+  #certificates {
+    .custom-certificates-card {
+      &__tmrer {
+        &__button {
+          &--mobile {
+            display: block;
+          }
+        }
+
+        .overly {
+          display: none;
+        }
+
+      }
+    }
+  }
+
   #skills {
     .skills {
       &__title {
@@ -964,9 +1013,49 @@
           }
         }
 
+        &--front-end {
+          border-bottom: 2px solid colors.$color-bootstrap;
+
+          i {
+            color: colors.$color-bootstrap;
+          }
+        }
+
+        &--build {
+          border-bottom: 2px solid colors.$color-webpack;
+
+          i {
+            color: colors.$color-webpack;
+          }
+        }
+
+        &--back-end {
+          border-bottom: 2px solid colors.$color-php;
+
+          i {
+            color: colors.$color-php;
+          }
+        }
+
+        &--design {
+          border-bottom: 2px solid colors.$color-figma;
+
+          i {
+            color: colors.$color-figma;
+          }
+        }
+
         &::after {
-          content: "➤";
-          font-size: 18px;
+          content: ">";
+          background-color: colors.$color-primary;
+          color: colors.$color-white;
+          width: 30px;
+          height: 30px;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
           transition: transform 0.3s ease;
           transform: rotate(90deg);
         }
